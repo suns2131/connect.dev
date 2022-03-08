@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous"></script>
+
+        <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+        <title>connect.dev</title>
+
+        <style>
+            * {
+            font-family: 'Jua', sans-serif;
+            }
+            .main {
+                width: 100%;
+                height: 1000px;
+
+                background: #18191C;
+            }
+            .logo_connect_dev {
+                background-color: transparent;
+                position: static;
+                width: 109px;
+                height: 26px;
+                margin-left: 50px;
+                margin-top: 37px;
+
+                line-height: 145%;
+
+                text-align: center;
+
+                color: #FFFFFF;
+            }
+            .myprofile {
+                width: 80px;
+                height: 20px;
+                left: 0px;
+                top: 0px;
+
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 145%;
+
+                text-align: center;
+
+                color: #A84AFF;
+
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+                margin: 0px 1300px;
+            }
+            .follow_list{
+                width: 110px;
+                height: 20px;
+                left: 87px;
+                top: 0px;
+
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 145%;
+
+                text-align: center;
+
+                color: #FFFFFF;
+
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+                margin: 0px 1400px;
+            }
+            .logout {
+                width: 80px;
+                height: 20px;
+                left: 200px;
+                top: 0px;
+
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 145%;
+
+                text-align: center;
+
+                color: #FFFFFF;
+
+                flex: none;
+                order: 2;
+                flex-grow: 0;
+                margin: 0px 1500px;
+            }
+            .profile {
+                position: static;
+                width: 690px;
+                height: 780px;
+                margin: auto;
+
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                box-sizing: border-box;
+                border-radius: 8px;
+
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            .profile_name {
+                width: 200px;
+                height: 38px;
+                margin: 20px 40px;
+
+                font-size: 24px;
+                line-height: 160%;
+
+                color: #FFFFFF;
+            }
+            .profile_iob {
+                width: 130px;
+                height: 16px;
+                margin-top: 20px;
+                margin-left: 40px;
+
+                font-size: 14px;
+                line-height: 16px;
+
+                color: #FFFFFF;
+
+                opacity: 0.6;
+            }
+            .profile_follow {
+                width: 90px;
+                height: 16px;
+                margin-left: 40px;
+                margin-top: 20px;
+
+                font-size: 14px;
+                line-height: 16px;
+
+                color: #FFFFFF;
+
+                opacity: 0.6;
+
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+            }
+            .profile_following {
+                width: 90px;
+                height: 16px;
+                margin-left: 30px;
+                margin-top: 20px;
+
+                font-size: 14px;
+                line-height: 16px;
+
+                color: #FFFFFF;
+
+                opacity: 0.6;
+
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+            }
+            .profile_revise {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 12px;
+
+                width: 148px;
+                height: 38px;
+                margin-left: 478px;
+                margin-top: 40px;
+
+                font-size: 12px;
+                line-height: 14px;
+
+                color: #FFFFFF;
+
+                background: #7D24CF;
+                border-radius: 100px;
+            }
+            .profile_comment {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 30px 55px;
+
+                width: 563px;
+                height: 76px;
+                margin-top: 30px;
+                margin-left: 60px;
+
+                font-size: 14px;
+                line-height: 16px;
+
+                color: #FFFFFF;
+
+                background: rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                box-sizing: border-box;
+                border-radius: 8px;
+            }
+            .profile_stack {
+                width: 80px;
+                height: 16px;
+                margin-top: 50px;
+                margin-left: 40px;
+
+                font-size: 14px;
+                line-height: 16px;
+
+                color: #FFFFFF;
+            }
+            .profile_stacks {
+                width: 70px;
+                height: 30px;
+                margin-top: 20px;
+                margin-left: 70px;
+                padding: 6px;
+
+                font-size: 14px;
+                line-height: 13px;
+
+                color: #FFFFFF;
+                text-align: center;
+
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-sizing: border-box;
+                border-radius: 100px;
+            }
+            .profile_url {
+                width: 40px;
+                height: 16px;
+                margin: 40px 40px;
+
+                font-size: 14px;
+                line-height: 16px;
+
+                color: #FFFFFF;
+            }
+            .input_url {
+                width: 563px;
+                height: 40px;
+                margin-left: 60px;
+                margin-top: 20px;
+                padding: 12px;
+
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                box-sizing: border-box;
+                border-radius: 8px;
+
+                font-size: 11px;
+                line-height: 13px;
+
+                color: #FFFFFF;
+
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+            }
+            .myprofile {
+                width: 80px;
+                height: 20px;
+                left: 0px;
+                top: 0px;
+
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 145%;
+
+                text-align: center;
+
+                color: #A84AFF;
+
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+                margin: 0px 1300px;
+            }
+            .follow_list{
+                width: 110px;
+                height: 20px;
+                left: 87px;
+                top: 0px;
+
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 145%;
+
+                text-align: center;
+
+                color: #FFFFFF;
+
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+                margin: 0px 1400px;
+            }
+            .logout {
+                width: 80px;
+                height: 20px;
+                left: 200px;
+                top: 0px;
+
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 145%;
+
+                text-align: center;
+
+                color: #FFFFFF;
+
+                flex: none;
+                order: 2;
+                flex-grow: 0;
+                margin: 0px 1500px;
+            }
+        </style>
+        <script>
+        </script>
+    </head>
+    <body>
+        <div class="main">
+            <div class="logo_connect_dev">Connect.dev</div>
+            <div class="column">
+                <div class="myprofile">내 프로필</div>
+                <div class="follow_list">팔로우 리스트</div>
+                <div class="logout">로그아웃</div>
+            </div>
+            <div class="profile">
+                <div class="profile_revise">수정하기</div>
+                <div class="profile_name">최대8글자까지</div>
+                <div class="profile_iob">프론트엔드 개발자</div>
+                <div class="row">
+                    <div class="profile_follow">팔로워</div>
+                    <div class="profile_following">팔로잉</div>
+                </div>
+                <div class="profile_comment">가나다라마바사아자차카타파하</div>
+                <div class="profile_stack">기술 스택</div>
+                    <div class="profile_stacks">React</div>
+                <div class="profile_url">링크</div>
+                    <input id="url1" class="input_url" type="text" placeholder="url링크" >
+                    <input id="url2" class="input_url" type="text" placeholder="url링크" >
+                    <input id="url3" class="input_url" type="text" placeholder="url링크" >
+
+            </div>
+        </div>
+    <p></p>
+    </body>
+</html>
